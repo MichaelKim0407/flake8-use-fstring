@@ -5,6 +5,13 @@ from flake8_use_fstring import __version__
 extra_test = [
     'pytest>=4',
     'pytest-cov>=2',
+
+    'flake8-builtins',
+    'flake8-commas',
+    'flake8-fixme',
+    'flake8-print',
+    'flake8-quotes',
+    'flake8-todo',
 ]
 extra_dev = [
     *extra_test,

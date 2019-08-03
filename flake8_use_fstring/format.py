@@ -1,7 +1,4 @@
 import token as _token
-from tokenize import (
-    TokenInfo as _TokenInfo,
-)
 
 from .base import (
     BaseLogicalLineChecker as _Base,
