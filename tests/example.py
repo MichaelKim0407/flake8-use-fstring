@@ -26,7 +26,7 @@ j = i.format(123)
 
 
 class C:
-    def format(self):
+    def format(self):  # noqa: A003
         return ''
 
 

@@ -12,7 +12,7 @@ class TestFlake8Cmd(object):
     def test(self):
         if self.expected_output is None:
             raise ValueError('expected output not provided')
-        cmd = ['flake8', 'tests/example.py']
+        cmd = ['flake8', 'tests/example.py', '--exclude=']
         if self.percent_greedy is not None:
             cmd.append(f'--percent-greedy={self.percent_greedy}')
         if self.format_greedy is not None:
