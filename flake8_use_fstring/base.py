@@ -19,10 +19,10 @@ class BaseLogicalLineChecker(object):
         self.tokens = tokens
 
     def __getitem__(self, i: int) -> bool:
-        raise NotImplementedError
+        raise NotImplementedError  # pragma: no cover
 
     def __call__(self, i: int) -> str:
-        raise NotImplementedError
+        raise NotImplementedError  # pragma: no cover
 
     def __iter__(self) -> _typing.Iterator[_typing.Tuple[int, str]]:
         met_string = False
@@ -37,16 +37,14 @@ class BaseLogicalLineChecker(object):
             if self.greedy == self.NO_GREEDY:
                 # only if last token is string
                 if i == 0:  # cannot use IndexError because -1 is a valid index
-                    continue
+                    continue  # pragma: no cover (syntax error)
                 if self.tokens[i - 1].exact_type != _token.STRING:
                     continue
-                pass
 
             elif self.greedy == self.GREEDY_MET_STRING:
                 # only if there has been a string to the left
                 if not met_string:
                     continue
-                pass
 
             else:
                 # match everything

@@ -12,16 +12,6 @@ class StrFormatDetector(_Base):
     name = 'use-fstring-format'
     version = '1.0'
 
-    @staticmethod
-    def match(token: _TokenInfo, last_token: _TokenInfo) -> bool:
-        if token.exact_type != _token.NAME:
-            return False
-        if token.string != 'format':
-            return False
-        if last_token.exact_type != _token.DOT:
-            return False
-        return True
-
     def __getitem__(self, i: int) -> bool:
         token = self.tokens[i]
         if token.exact_type != _token.DOT:
@@ -29,10 +19,10 @@ class StrFormatDetector(_Base):
 
         try:
             next_token = self.tokens[i + 1]
-        except IndexError:
+        except IndexError:  # pragma: no cover (syntax error)
             return False
         if next_token.exact_type != _token.NAME:
-            return False
+            return False  # pragma: no cover (syntax error)
         if next_token.string != 'format':
             return False
 

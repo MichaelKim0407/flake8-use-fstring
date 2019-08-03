@@ -14,6 +14,7 @@ dist/
 
 # Testing
 .pytest_cache/
+.coverage
 
 # System
 .DS_Store

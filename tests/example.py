@@ -35,3 +35,6 @@ k = '' + C().format()
 
 # false positive greedy level 2
 m = C().format()
+
+# no errors below; coverage
+''.strip()

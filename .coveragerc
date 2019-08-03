@@ -1,0 +1,2 @@
+[run]
+source = flake8_use_fstring

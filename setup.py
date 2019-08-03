@@ -4,6 +4,7 @@ from flake8_use_fstring import __version__
 
 extra_test = [
     'pytest>=4',
+    'pytest-cov>=2',
 ]
 extra_dev = [
     *extra_test,
