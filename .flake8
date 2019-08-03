@@ -1,4 +1,6 @@
 [flake8]
+percent-greedy = 2
+format-greedy = 2
 exclude =
     ./tests/example.py,
     .*

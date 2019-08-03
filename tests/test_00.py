@@ -1,4 +1,6 @@
 def test_greedy_0(test_flake8_cmd):
+    test_flake8_cmd.percent_greedy = 0
+    test_flake8_cmd.format_greedy = 0
     test_flake8_cmd.expected_output = b"""\
 tests/example.py:2:10: FS001 '%' operator used
 tests/example.py:18:9: FS002 '.format' used
@@ -40,6 +42,7 @@ tests/example.py:37:8: FS002 '.format' used
 
 def test_greedy_different(test_flake8_cmd):
     test_flake8_cmd.percent_greedy = 2
+    test_flake8_cmd.format_greedy = 0
     test_flake8_cmd.expected_output = b"""\
 tests/example.py:2:10: FS001 '%' operator used
 tests/example.py:5:18: FS001 '%' operator used
