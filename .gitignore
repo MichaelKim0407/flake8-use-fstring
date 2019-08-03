@@ -12,5 +12,8 @@ __pycache__/
 *.egg-info/
 dist/
 
+# Testing
+.pytest_cache/
+
 # System
 .DS_Store

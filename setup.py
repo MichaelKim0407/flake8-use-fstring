@@ -2,6 +2,13 @@ from setuptools import setup, find_packages
 
 from flake8_use_fstring import __version__
 
+extra_test = [
+    'pytest>=4',
+]
+extra_dev = [
+    *extra_test,
+]
+
 setup(
     name='flake8-use-fstring',
     version=__version__,
@@ -18,6 +25,11 @@ setup(
     install_requires=[
         'flake8==3.*',
     ],
+
+    extras_require={
+        'test': extra_test,
+        'dev': extra_dev,
+    },
 
     entry_points={
         'flake8.extension': [
