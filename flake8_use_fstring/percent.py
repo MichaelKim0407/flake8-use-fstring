@@ -14,3 +14,5 @@ class PercentFormatDetector(_Base):
 
     def __call__(self, i: int) -> str:
         return "FS001 '%' operator used"
+
+    GREEDY_OPTION_NAME = 'percent-greedy'
