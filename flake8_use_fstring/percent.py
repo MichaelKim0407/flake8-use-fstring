@@ -1,24 +1,16 @@
 import token as _token
-import typing as _typing
-from tokenize import (
-    TokenInfo as _TokenInfo,
+
+from .base import (
+    BaseLogicalLineChecker as _Base,
 )
 
 
-class PercentFormatDetector(object):
+class PercentFormatDetector(_Base):
     name = 'use-fstring-percent'
     version = '1.0'
 
-    def __init__(
-            self,
-            logical_line: str,
-            tokens: _typing.List[_TokenInfo],
-    ):
-        self.logical_line = logical_line
-        self.tokens = tokens
+    def __getitem__(self, i: int) -> bool:
+        return self.tokens[i].exact_type == _token.PERCENT
 
-    def __iter__(self) -> _typing.Iterator[_typing.Tuple[int, str]]:
-        for token in self.tokens:
-            if token.exact_type != _token.PERCENT:
-                continue
-            yield token.start, f"FS001 '%' operator used"
+    def __call__(self, i: int) -> str:
+        return "FS001 '%' operator used"
