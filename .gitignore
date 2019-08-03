@@ -1,0 +1,16 @@
+# IDE
+.idea/
+
+# Python
+*.py[cod]
+__pycache__/
+
+# Venv
+.venv/
+
+# Pip
+*.egg-info/
+dist/
+
+# System
+.DS_Store
