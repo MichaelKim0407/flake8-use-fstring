@@ -19,6 +19,13 @@ setup(
         'flake8==3.*',
     ],
 
+    entry_points={
+        'flake8.extension': [
+            'FS001 = flake8_use_fstring.percent:PercentFormatDetector',
+            'FS002 = flake8_use_fstring.format:StrFormatDetector',
+        ],
+    },
+
     classifiers=[
         'Intended Audience :: Developers',
 
