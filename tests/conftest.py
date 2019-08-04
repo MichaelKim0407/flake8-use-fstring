@@ -5,18 +5,20 @@ import pytest
 
 class TestFlake8Cmd(object):
     def __init__(self):
-        self.percent_greedy = None
-        self.format_greedy = None
+        self.percent_greedy = 0
+        self.format_greedy = 0
         self.expected_output = None
 
     def test(self):
         if self.expected_output is None:
             raise ValueError('expected output not provided')
-        cmd = ['flake8', 'tests/example.py', '--exclude=']
-        if self.percent_greedy is not None:
-            cmd.append(f'--percent-greedy={self.percent_greedy}')
-        if self.format_greedy is not None:
-            cmd.append(f'--format-greedy={self.format_greedy}')
+        cmd = [
+            'flake8',
+            'tests/example.py',
+            '--exclude=',
+            f'--percent-greedy={self.percent_greedy}',
+            f'--format-greedy={self.format_greedy}',
+        ]
         p = subprocess.run(
             cmd,
             stdout=subprocess.PIPE, stderr=subprocess.PIPE,
