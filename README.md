@@ -7,6 +7,12 @@ Jump-start into modern Python by forcing yourself to use f-strings.
 
 Works only with `python>=3.6`, apparently.
 
+## Installation
+
+```bash
+pip install flake8-use-fstring
+```
+
 ## Reported Errors
 
 * `FS001`: `%` formatting is used.
