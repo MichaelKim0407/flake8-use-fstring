@@ -1,5 +1,5 @@
 import token as _token
-import typing as _typing
+from typing import Iterator, List, Tuple
 from tokenize import (
     TokenInfo as _TokenInfo,
 )
@@ -13,7 +13,7 @@ class BaseLogicalLineChecker(object):
     def __init__(
             self,
             logical_line: str,
-            tokens: _typing.List[_TokenInfo],
+            tokens: List[_TokenInfo],
     ):
         self.logical_line = logical_line
         self.tokens = tokens
@@ -24,7 +24,7 @@ class BaseLogicalLineChecker(object):
     def __call__(self, i: int) -> str:
         raise NotImplementedError  # pragma: no cover
 
-    def __iter__(self) -> _typing.Iterator[_typing.Tuple[int, str]]:
+    def __iter__(self) -> Iterator[Tuple[Tuple[int, int], str]]:
         met_string = False
 
         for i in range(len(self.tokens)):

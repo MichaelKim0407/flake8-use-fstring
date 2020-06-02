@@ -7,6 +7,7 @@ class TestFlake8Cmd(object):
     def __init__(self):
         self.percent_greedy = 0
         self.format_greedy = 0
+        self.missing_prefix = False
         self.expected_output = None
 
     def test(self):
@@ -19,6 +20,8 @@ class TestFlake8Cmd(object):
             f'--percent-greedy={self.percent_greedy}',
             f'--format-greedy={self.format_greedy}',
         ]
+        if (self.missing_prefix):
+            cmd.append('--fstring-missing-prefix')
         p = subprocess.run(
             cmd,
             stdout=subprocess.PIPE, stderr=subprocess.PIPE,

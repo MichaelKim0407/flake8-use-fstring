@@ -36,5 +36,18 @@ k = '' + C().format()
 # false positive greedy level 2
 m = C().format()
 
+# missing prefix false positive
+n = (rf'{m}'
+     '{'
+     '}'
+     'm'
+     ''
+     '{}'
+     '{{m}}')
+
+# match missing prefix
+o = ('{n}'
+     '{{m}} {n}')
+
 # no errors below; coverage
 ''.strip()

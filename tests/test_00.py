@@ -49,3 +49,14 @@ tests/example.py:15:7: FS001 '%' operator used
 tests/example.py:18:9: FS002 '.format' used
 """
     test_flake8_cmd.test()
+
+
+def test_missing_prefix(test_flake8_cmd):
+    test_flake8_cmd.missing_prefix = True
+    test_flake8_cmd.expected_output = b"""\
+tests/example.py:2:10: FS001 '%' operator used
+tests/example.py:18:9: FS002 '.format' used
+tests/example.py:49:6: FS003 f-string missing prefix
+tests/example.py:50:6: FS003 f-string missing prefix
+"""
+    test_flake8_cmd.test()
