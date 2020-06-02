@@ -15,7 +15,7 @@ e = '' + str(3 % 2)
 f = 3 % 2
 
 # match greedy level 0
-g = '{}'.format(123)
+g = '{val}'.format(val=123)
 
 # match greedy level 1
 h = ('x' + '{}').format(123)
