@@ -61,6 +61,7 @@ tests/example.py:50:6: FS003 f-string missing prefix
 """
     test_flake8_cmd.test()
 
+
 def test_missing_prefix_ignore_format(test_flake8_cmd):
     test_flake8_cmd.enable_prefix = True
     test_flake8_cmd.ignore_format = True
