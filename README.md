@@ -19,11 +19,11 @@ pip install flake8-use-fstring
 
 * `FS002`: `.format` formatting is used.
 
-* `FS003`: f-string missing prefix.
+* `FS003`: f-string missing prefix (ignored by default).
 
 ## Available Configurations
 
-### `--percent-greedy`, `--format-greedy`, and `--fstring-missing-prefix`
+### `--percent-greedy`, `--format-greedy`, and `--fstring-ignore-format`
 
 This plugin checks each python statement (logical line)
 and see if `%` or `.format` is used.
@@ -50,10 +50,15 @@ To set greedy levels,
 set `--percent-greedy=<level>` and `--format-greedy=<level>` in the command line,
 or set `percent-greedy=<level>` and `format-greedy=<level>` in the `.flake8` config file.
 
-Optionally, this plugin can also check for strings that appear to be indended to be f-strings
+Optionally, this plugin can also check for strings that appear to be intended to be f-strings
 but are missing the `f` prefix.
-This check is intended to assist when converting code to use f-strings.
+This check is meant to assist when converting code to use f-strings.
 Due to the potential for false positives, this check (`FS003`) is disabled by default.
 To enable this check,
-add the `--fstring-missing-prefix` command line option,
-or set `fstring-missing-prefix=True` in the `.flake8` config file.
+add the `--enable-extensions=FS003` command line option,
+or set `enable-extensions=FS003` in the `.flake8` config file.
+
+The missing prefix check normally ignores strings that are using `%` or `.format` formatting,
+to check those strings as well,
+add the `--fstring-ignore-format` command line option,
+or set `fstring-ignore-format=True` in the `.flake8` config file.
