@@ -3,6 +3,7 @@ from setuptools import setup, find_packages
 from flake8_use_fstring import __version__
 
 extra_test = [
+    'coverage==4.*',
     'pytest>=4',
     'pytest-cov>=2',
 
