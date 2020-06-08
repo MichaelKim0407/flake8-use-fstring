@@ -1,7 +1,7 @@
 import token as _token
 
 from .base import (
-    BaseLogicalLineChecker as _Base,
+    BaseGreedyLogicalLineChecker as _Base,
 )
 
 

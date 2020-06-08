@@ -7,6 +7,8 @@ class TestFlake8Cmd(object):
     def __init__(self):
         self.percent_greedy = 0
         self.format_greedy = 0
+        self.enable_prefix = False
+        self.ignore_format = False
         self.expected_output = None
 
     def test(self):
@@ -19,6 +21,10 @@ class TestFlake8Cmd(object):
             f'--percent-greedy={self.percent_greedy}',
             f'--format-greedy={self.format_greedy}',
         ]
+        if self.enable_prefix:
+            cmd.append('--enable-extensions=FS003')
+        if self.ignore_format:
+            cmd.append('--fstring-ignore-format')
         p = subprocess.run(
             cmd,
             stdout=subprocess.PIPE, stderr=subprocess.PIPE,

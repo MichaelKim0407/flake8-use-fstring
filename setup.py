@@ -3,6 +3,7 @@ from setuptools import setup, find_packages
 from flake8_use_fstring import __version__
 
 extra_test = [
+    'coverage==4.*',
     'pytest>=4',
     'pytest-cov>=2',
 
@@ -50,6 +51,7 @@ setup(
         'flake8.extension': [
             'FS001 = flake8_use_fstring.percent:PercentFormatDetector',
             'FS002 = flake8_use_fstring.format:StrFormatDetector',
+            'FS003 = flake8_use_fstring.prefix:MissingPrefixDetector',
         ],
     },
 

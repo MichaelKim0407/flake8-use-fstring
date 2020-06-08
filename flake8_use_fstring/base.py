@@ -8,6 +8,8 @@ from flake8.options.manager import (
     OptionManager as _OptionManager,
 )
 
+Flake8Output = _typing.Tuple[_typing.Tuple[int, int], str]
+
 
 class BaseLogicalLineChecker(object):
     def __init__(
@@ -24,7 +26,15 @@ class BaseLogicalLineChecker(object):
     def __call__(self, i: int) -> str:
         raise NotImplementedError  # pragma: no cover
 
-    def __iter__(self) -> _typing.Iterator[_typing.Tuple[int, str]]:
+    def __iter__(self) -> _typing.Iterator[Flake8Output]:
+        for i in range(len(self.tokens)):
+            if not self[i]:
+                continue
+            yield self.tokens[i].start, self(i)
+
+
+class BaseGreedyLogicalLineChecker(BaseLogicalLineChecker):
+    def __iter__(self) -> _typing.Iterator[Flake8Output]:
         met_string = False
 
         for i in range(len(self.tokens)):
