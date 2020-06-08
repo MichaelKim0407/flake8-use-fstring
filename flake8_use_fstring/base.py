@@ -1,5 +1,5 @@
 import token as _token
-from typing import List as _List, Iterator as _Iterator, Tuple as _Tuple
+import typing as _typing
 from tokenize import (
     TokenInfo as _TokenInfo,
 )
@@ -8,12 +8,14 @@ from flake8.options.manager import (
     OptionManager as _OptionManager,
 )
 
+Flake8Output = _typing.Tuple[_typing.Tuple[int, int], str]
+
 
 class BaseLogicalLineChecker(object):
     def __init__(
             self,
             logical_line: str,
-            tokens: _List[_TokenInfo],
+            tokens: _typing.List[_TokenInfo],
     ):
         self.logical_line = logical_line
         self.tokens = tokens
@@ -24,7 +26,7 @@ class BaseLogicalLineChecker(object):
     def __call__(self, i: int) -> str:
         raise NotImplementedError  # pragma: no cover
 
-    def __iter__(self) -> _Iterator[_Tuple[_Tuple[int, int], str]]:
+    def __iter__(self) -> _typing.Iterator[Flake8Output]:
         for i in range(len(self.tokens)):
             if not self[i]:
                 continue
@@ -32,7 +34,7 @@ class BaseLogicalLineChecker(object):
 
 
 class BaseGreedyLogicalLineChecker(BaseLogicalLineChecker):
-    def __iter__(self) -> _Iterator[_Tuple[_Tuple[int, int], str]]:
+    def __iter__(self) -> _typing.Iterator[Flake8Output]:
         met_string = False
 
         for i in range(len(self.tokens)):

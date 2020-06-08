@@ -1,4 +1,4 @@
-import re
+import re as _re
 import token as _token
 
 from flake8.options.manager import (
@@ -9,9 +9,10 @@ from .base import (
     BaseLogicalLineChecker as _Base,
 )
 
-FSTRING_REGEX = re.compile(r'^([a-zA-Z]*?[fF][a-zA-Z]*?){1}["\']')
-NON_FSTRING_REGEX = re.compile(
-    r'^[a-zA-Z]*(?:\'\'\'|\'|"""|")(.*?{.+?}.*)(?:\'|\'\'\'|"|""")$')
+FSTRING_REGEX = _re.compile(r'^([a-zA-Z]*?[fF][a-zA-Z]*?){1}["\']')
+NON_FSTRING_REGEX = _re.compile(
+    r'^[a-zA-Z]*(?:\'\'\'|\'|"""|")(.*?{.+?}.*)(?:\'|\'\'\'|"|""")$',
+)
 
 
 class MissingPrefixDetector(_Base):
