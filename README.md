@@ -1,7 +1,11 @@
 # flake8-use-fstring
 
-[![Build Status](https://travis-ci.com/MichaelKim0407/flake8-use-fstring.svg?branch=master)](https://travis-ci.com/MichaelKim0407/flake8-use-fstring)
-[![Coverage Status](https://coveralls.io/repos/github/MichaelKim0407/flake8-use-fstring/badge.svg?branch=master)](https://coveralls.io/github/MichaelKim0407/flake8-use-fstring?branch=master)
+* `master` (release)
+    [![Build Status](https://travis-ci.com/MichaelKim0407/flake8-use-fstring.svg?branch=master)](https://travis-ci.com/MichaelKim0407/flake8-use-fstring)
+    [![Coverage Status](https://coveralls.io/repos/github/MichaelKim0407/flake8-use-fstring/badge.svg?branch=master)](https://coveralls.io/github/MichaelKim0407/flake8-use-fstring?branch=master)
+* `develop` (main)
+    [![Build Status](https://travis-ci.com/MichaelKim0407/flake8-use-fstring.svg?branch=develop)](https://travis-ci.com/MichaelKim0407/flake8-use-fstring)
+    [![Coverage Status](https://coveralls.io/repos/github/MichaelKim0407/flake8-use-fstring/badge.svg?branch=develop)](https://coveralls.io/github/MichaelKim0407/flake8-use-fstring?branch=develop)
 
 Jump-start into modern Python by forcing yourself to use f-strings.
 
