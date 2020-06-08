@@ -15,7 +15,7 @@ e = '' + str(3 % 2)
 f = 3 % 2
 
 # match greedy level 0
-g = '{}'.format(123)
+g = '{val}'.format(val=123)
 
 # match greedy level 1
 h = ('x' + '{}').format(123)
@@ -35,6 +35,19 @@ k = '' + C().format()
 
 # false positive greedy level 2
 m = C().format()
+
+# missing prefix false positive
+n = (rf'{m}'
+     '{'
+     '}'
+     'm'
+     ''
+     '{}'
+     '{{m}}')
+
+# match missing prefix
+o = ('{n}'
+     '{{m}} {n}')
 
 # no errors below; coverage
 ''.strip()

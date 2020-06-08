@@ -16,5 +16,8 @@ dist/
 .pytest_cache/
 .coverage
 
+# mypy
+.mypy_cache/
+
 # System
 .DS_Store
