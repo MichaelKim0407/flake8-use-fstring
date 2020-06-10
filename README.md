@@ -56,15 +56,19 @@ or set `percent-greedy=<level>` and `format-greedy=<level>` in the `.flake8` con
 
 ### `--enable-extensions=FS003` and `--fstring-ignore-format`
 
-Optionally, this plugin can also check for strings that appear to be intended to be f-strings
-but are missing the `f` prefix.
-This check is meant to assist when converting code to use f-strings.
+This plugin can also check for strings that appear to be f-strings but don't have the `f` prefix.
+
 Due to the potential for false positives, this check (`FS003`) is disabled by default.
 To enable this check,
 add the `--enable-extensions=FS003` command line option,
 or set `enable-extensions=FS003` in the `.flake8` config file.
 
-The missing prefix check normally ignores strings that are using `%` or `.format` formatting,
-to check those strings as well,
+**NOTE**:
+If you use the `--ignore` option of `flake8`, the default ignore list will be overwritten.
+See [`--ignore`](https://flake8.pycqa.org/en/latest/user/options.html#cmdoption-flake8-ignore)
+vs [`--extend-ignore`](https://flake8.pycqa.org/en/latest/user/options.html#cmdoption-flake8-extend-ignore).
+
+The missing prefix check normally ignores strings that are using `%` or `.format` formatting.
+To check those strings as well,
 add the `--fstring-ignore-format` command line option,
 or set `fstring-ignore-format=True` in the `.flake8` config file.
