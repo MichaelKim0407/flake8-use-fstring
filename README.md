@@ -27,7 +27,7 @@ pip install flake8-use-fstring
 
 ## Available Configurations
 
-### `--percent-greedy`, `--format-greedy`, and `--fstring-ignore-format`
+### `--percent-greedy` and `--format-greedy`
 
 This plugin checks each python statement (logical line)
 and see if `%` or `.format` is used.
@@ -53,6 +53,8 @@ However, for most projects it should be reasonable to use greedy level 2 with co
 To set greedy levels,
 set `--percent-greedy=<level>` and `--format-greedy=<level>` in the command line,
 or set `percent-greedy=<level>` and `format-greedy=<level>` in the `.flake8` config file.
+
+### `--enable-extensions=FS003` and `--fstring-ignore-format`
 
 Optionally, this plugin can also check for strings that appear to be intended to be f-strings
 but are missing the `f` prefix.
