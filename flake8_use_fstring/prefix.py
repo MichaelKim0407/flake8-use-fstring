@@ -11,7 +11,7 @@ from .base import (
 
 FSTRING_REGEX = _re.compile(r'^([a-zA-Z]*?[fF][a-zA-Z]*?){1}["\']')
 NON_FSTRING_REGEX = _re.compile(
-    r'^[a-zA-Z]*(?:\'\'\'|\'|"""|")(.*?{.+?}.*)(?:\'|\'\'\'|"|""")$',
+    r'^[a-zA-Z]*(?<!\b[rR])(?:\'\'\'|\'|"""|")(.*?{.+?}.*)(?:\'|\'\'\'|"|""")$',
 )
 
 
