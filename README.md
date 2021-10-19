@@ -1,16 +1,19 @@
 # flake8-use-fstring
 
+[![Release Status](https://github.com/MichaelKim0407/flake8-use-fstring/actions/workflows/python-publish.yml/badge.svg)](https://github.com/MichaelKim0407/flake8-use-fstring/releases)
 [![PyPI package](https://badge.fury.io/py/flake8-use-fstring.svg)](https://pypi.org/project/flake8-use-fstring)
 [![Supported Python versions](https://img.shields.io/pypi/pyversions/flake8-use-fstring)](https://pypi.org/project/flake8-use-fstring)
 
 * `master` (release)
-    [![Build Status](https://travis-ci.com/MichaelKim0407/flake8-use-fstring.svg?branch=master)](https://travis-ci.com/MichaelKim0407/flake8-use-fstring)
+    [![Build Status](https://github.com/MichaelKim0407/flake8-use-fstring/actions/workflows/test.yml/badge.svg?branch=master)](https://github.com/MichaelKim0407/flake8-use-fstring/tree/master)
     [![Coverage Status](https://coveralls.io/repos/github/MichaelKim0407/flake8-use-fstring/badge.svg?branch=master)](https://coveralls.io/github/MichaelKim0407/flake8-use-fstring?branch=master)
 * `develop` (main)
-    [![Build Status](https://travis-ci.com/MichaelKim0407/flake8-use-fstring.svg?branch=develop)](https://travis-ci.com/MichaelKim0407/flake8-use-fstring)
+    [![Build Status](https://github.com/MichaelKim0407/flake8-use-fstring/actions/workflows/test.yml/badge.svg?branch=develop)](https://github.com/MichaelKim0407/flake8-use-fstring/)
     [![Coverage Status](https://coveralls.io/repos/github/MichaelKim0407/flake8-use-fstring/badge.svg?branch=develop)](https://coveralls.io/github/MichaelKim0407/flake8-use-fstring?branch=develop)
 
 Jump-start into modern Python by forcing yourself to use f-strings.
+
+Works only with `python>=3.6` since it was when f-strings were introduced.
 
 ## Installation
 
