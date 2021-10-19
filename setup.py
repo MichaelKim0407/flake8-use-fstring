@@ -37,7 +37,7 @@ setup(
     python_requires='>=3.6',
 
     install_requires=[
-        'flake8 >=3',
+        'flake8>=3',
     ],
 
     extras_require={
