@@ -1,5 +1,8 @@
 # flake8-use-fstring
 
+[![PyPI package](https://badge.fury.io/py/flake8-use-fstring.svg)](https://pypi.org/project/flake8-use-fstring)
+[![Supported Python versions](https://img.shields.io/pypi/pyversions/flake8-use-fstring)](https://pypi.org/project/flake8-use-fstring)
+
 * `master` (release)
     [![Build Status](https://travis-ci.com/MichaelKim0407/flake8-use-fstring.svg?branch=master)](https://travis-ci.com/MichaelKim0407/flake8-use-fstring)
     [![Coverage Status](https://coveralls.io/repos/github/MichaelKim0407/flake8-use-fstring/badge.svg?branch=master)](https://coveralls.io/github/MichaelKim0407/flake8-use-fstring?branch=master)
@@ -8,8 +11,6 @@
     [![Coverage Status](https://coveralls.io/repos/github/MichaelKim0407/flake8-use-fstring/badge.svg?branch=develop)](https://coveralls.io/github/MichaelKim0407/flake8-use-fstring?branch=develop)
 
 Jump-start into modern Python by forcing yourself to use f-strings.
-
-Works only with `python>=3.6`, apparently.
 
 ## Installation
 
