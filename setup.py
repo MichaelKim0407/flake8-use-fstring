@@ -20,7 +20,7 @@ extra_dev = [
 
 extra_ci = [
     *extra_test,
-    'python-coveralls',
+    'coveralls',
 ]
 
 setup(
