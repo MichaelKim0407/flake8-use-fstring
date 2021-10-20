@@ -9,6 +9,8 @@ from .base import (
     BaseLogicalLineChecker as _Base,
 )
 
+from . import __version__
+
 FSTRING_REGEX = _re.compile(r'^([a-zA-Z]*?[fF][a-zA-Z]*?){1}["\']')
 NON_FSTRING_REGEX = _re.compile(
     r'^[a-zA-Z]*(?:\'\'\'|\'|"""|")(.*?{.+?}.*)(?:\'|\'\'\'|"|""")$',
@@ -17,7 +19,7 @@ NON_FSTRING_REGEX = _re.compile(
 
 class MissingPrefixDetector(_Base):
     name = 'use-fstring-prefix'
-    version = '1.0'
+    version = __version__
     ignore_format = False
     off_by_default = True
 
