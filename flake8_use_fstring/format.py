@@ -3,11 +3,12 @@ import token as _token
 from .base import (
     BaseGreedyLogicalLineChecker as _Base,
 )
+from . import __version__
 
 
 class StrFormatDetector(_Base):
     name = 'use-fstring-format'
-    version = '1.0'
+    version = __version__
 
     def __getitem__(self, i: int) -> bool:
         token = self.tokens[i]
