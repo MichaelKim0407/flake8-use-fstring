@@ -47,7 +47,8 @@ n = (rf'{m}'
 
 # match missing prefix
 o = ('{n}'
-     '{{m}} {n}')
+     '{{m}} {n}'
+     r'[a-z]{1,3}')  # Should not be matched.
 
 # no errors below; coverage
 ''.strip()

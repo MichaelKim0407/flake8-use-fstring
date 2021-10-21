@@ -62,6 +62,11 @@ or set `percent-greedy=<level>` and `format-greedy=<level>` in the `.flake8` con
 
 This plugin can also check for strings that appear to be f-strings but don't have the `f` prefix.
 
+`FS003` will be reported if a string:
+* is not prefixed with `f`
+* contains at least one pair of `{}`
+* is not prefixed with `r` (because r-strings are often regexes that would contain `{}`)
+
 Due to the potential for false positives, this check (`FS003`) is disabled by default.
 To enable this check,
 add the `--enable-extensions=FS003` command line option,
