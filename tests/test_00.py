@@ -34,6 +34,7 @@ tests/example.py:21:17: FS002 '.format' used
 tests/example.py:25:6: FS002 '.format' used
 tests/example.py:34:13: FS002 '.format' used
 tests/example.py:37:8: FS002 '.format' used
+tests/example.py:55:11: FS001 '%' operator used
 """
     test_flake8_cmd.test()
 
@@ -47,6 +48,7 @@ tests/example.py:9:7: FS001 '%' operator used
 tests/example.py:12:16: FS001 '%' operator used
 tests/example.py:15:7: FS001 '%' operator used
 tests/example.py:18:12: FS002 '.format' used
+tests/example.py:55:11: FS001 '%' operator used
 """
     test_flake8_cmd.test()
 
