@@ -9,6 +9,10 @@ from .base import (
     BaseLogicalLineChecker as _Base,
 )
 
+from .utils import (
+    is_text_string_token as _is_text_string_token,
+)
+
 from . import __version__
 
 FSTRING_REGEX = _re.compile(r'^([a-zA-Z]*?[fF][a-zA-Z]*?){1}["\']')
@@ -26,7 +30,7 @@ class MissingPrefixDetector(_Base):
 
     def __getitem__(self, i: int) -> bool:
         token = self.tokens[i]
-        if token.exact_type != _token.STRING:
+        if not _is_text_string_token(token):
             return False
 
         if FSTRING_REGEX.search(token.string):  # already is an f-string
