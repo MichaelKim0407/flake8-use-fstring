@@ -81,3 +81,9 @@ The missing prefix check normally ignores strings that are using `%` or `.format
 To check those strings as well,
 add the `--fstring-ignore-format` command line option,
 or set `fstring-ignore-format=True` in the `.flake8` config file.
+
+## Additional Notes
+
+### Byte literals
+
+Byte literals (strings that are prefixed with a literal `b`) will not be checked since Python does not support f-strings for them (as of 3.9).
