@@ -50,5 +50,13 @@ o = ('{n}'
      '{{m}} {n}'
      r'[a-z]{1,3}')  # Should not be matched.
 
+# should not be matched on any greedy level < 2
+# (bytestrings can't be f-strings)
+p = b'%d' % f
+
+# should not be matched for missing prefix
+# (bytestrings can't be f-strings)
+q = b'{n}'
+
 # no errors below; coverage
 ''.strip()

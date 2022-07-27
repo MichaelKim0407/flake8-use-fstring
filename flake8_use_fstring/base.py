@@ -1,11 +1,15 @@
-import token as _token
 import typing as _typing
+
 from tokenize import (
     TokenInfo as _TokenInfo,
 )
 
 from flake8.options.manager import (
     OptionManager as _OptionManager,
+)
+
+from flake8_use_fstring.utils import (
+    is_text_string_token as _is_text_string_token,
 )
 
 Flake8Output = _typing.Tuple[_typing.Tuple[int, int], str]
@@ -38,7 +42,7 @@ class BaseGreedyLogicalLineChecker(BaseLogicalLineChecker):
         met_string = False
 
         for i in range(len(self.tokens)):
-            if self.tokens[i].exact_type == _token.STRING:
+            if _is_text_string_token(self.tokens[i]):
                 met_string = True
 
             if not self[i]:
@@ -48,7 +52,7 @@ class BaseGreedyLogicalLineChecker(BaseLogicalLineChecker):
                 # only if last token is string
                 if i == 0:  # cannot use IndexError because -1 is a valid index
                     continue  # pragma: no cover (syntax error)
-                if self.tokens[i - 1].exact_type != _token.STRING:
+                if not _is_text_string_token(self.tokens[i - 1]):
                     continue
 
             elif self.greedy == self.GREEDY_MET_STRING:
