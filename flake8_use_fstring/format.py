@@ -21,10 +21,7 @@ class StrFormatDetector(_Base):
             return False
         if next_token.exact_type != _token.NAME:
             return False  # pragma: no cover (syntax error)
-        if next_token.string != 'format':
-            return False
-
-        return True
+        return next_token.string == 'format'
 
     def __call__(self, i: int) -> str:
         return "FS002 '.format' used"
