@@ -8,7 +8,8 @@ extra_test = [
     'pytest-cov>=2',
 
     'flake8-builtins',
-    'flake8-commas',
+    # Cannot install on python 3.12, project is archived
+    'flake8-commas ; python_version < "3.12"',
     'flake8-fixme',
     'flake8-print',
     'flake8-quotes',
@@ -64,12 +65,12 @@ setup(
 
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: 3.10',
         'Programming Language :: Python :: 3.11',
+        'Programming Language :: Python :: 3.12',
 
         'Topic :: Software Development :: Libraries :: Python Modules',
         'Topic :: Software Development :: Quality Assurance',
